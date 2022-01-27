@@ -138,7 +138,7 @@ ${tf.faction == "Decepticons" ? svgDece : svgAuto}
 
 const fetchFactions = async function () {
   const response = await fetch(
-    "http://raw.githubusercontent.com/damirsehic/transformers-api/master/db.json"
+    "https://raw.githubusercontent.com/damirsehic/transformers-api/master/db.json"
   );
   const { factions } = await response.json();
   return factions.map((element) => element.name);
@@ -171,7 +171,7 @@ const renderOptions = function (options) {
 
 const fetchGroups = async function () {
   const response = await fetch(
-    "http://raw.githubusercontent.com/damirsehic/transformers-api/master/db.json"
+    "https://raw.githubusercontent.com/damirsehic/transformers-api/master/db.json"
   );
   const data = await response.json();
   vehicleTypes = data.vehicleTypes;
