@@ -1,0 +1,293 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  min-height: 100vh;
+  font-family: "Lato", sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: rgb(29, 27, 39);
+  position: relative;
+  max-width: 100%;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.filter-icon {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  fill: transparent;
+  transition: all 0.3s;
+}
+
+.filter {
+  position: relative;
+  border: none;
+
+  display: flex;
+  align-items: center;
+}
+
+.filter-input {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.filter-input:checked + .filter-icon.auto {
+  fill: #cc2229;
+  -webkit-filter: drop-shadow(0 3px 10px rgba(255, 0, 0, 0.7));
+  filter: drop-shadow(0 3px 10px rgba(141, 0, 0, 0.7));
+}
+
+.filter-input:checked + .filter-icon.dece {
+  fill: #5a5d80;
+  -webkit-filter: drop-shadow(0 3px 2px rgba(73, 84, 185, 0.7));
+  filter: drop-shadow(0 3px 2px rgba(73, 84, 185, 0.7));
+  stroke: #000;
+}
+
+.filter-show-all {
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.filter-input:checked + .filter-show-all {
+  text-shadow: 0 0 10px #fff;
+}
+.search-container {
+  position: absolute;
+  right: 10px;
+  margin-left: auto;
+}
+
+.search-bar {
+  font-family: inherit;
+  font-size: 20px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+.btn-add-gear,
+.btn-delete,
+.btn-edit {
+  position: absolute;
+  right: 10px;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.btn-add-gear {
+  bottom: 10px;
+}
+
+.btn-delete {
+  top: 10px;
+}
+
+.btn-edit {
+  right: 40px;
+  top: 10px;
+}
+
+.icon-delete,
+.icon-edit,
+.icon-add {
+  height: 24px;
+  width: 24px;
+  stroke: #fff;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 0.5fr 1.5fr 1fr 1fr;
+  align-items: center;
+
+  width: 400px;
+  padding: 10px;
+
+  background-color: #3e3f49;
+
+  border-radius: 5px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.07);
+
+  transition: all 0.3s;
+  animation: fadeIn 1s forwards;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-header {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 300;
+  align-self: flex-end;
+}
+
+.tertiary-header {
+  font-size: 24px;
+}
+
+.status-selection {
+  height: 100%;
+
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.644);
+}
+
+.status-value {
+  font-family: inherit;
+}
+
+.card-icon {
+  height: 100px;
+  width: 100px;
+  grid-row: span 3;
+}
+
+.gear-container {
+  grid-column: span 2;
+}
+
+.gear-container li,
+.gear-container ul {
+  display: inline-block;
+}
+
+.gear-item:hover {
+  color: #444;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.btn {
+  height: 75px;
+  width: 250px;
+
+  border: none;
+  border-radius: 20px;
+
+  background-color: #fa5252;
+  color: #fff;
+
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 24px;
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #fa5252;
+  box-shadow: inset 0 0 0 2px #fa5252;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+}
+
+.modal-window {
+  height: min(300px, 80%);
+  width: min(700px, 80%);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.151);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+.btn-container {
+  display: flex;
+  gap: 10px;
+}
+.btn-choice {
+  font-family: inherit;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  padding: 20px 40px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn-choice:hover {
+  background-color: #fa5252;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
