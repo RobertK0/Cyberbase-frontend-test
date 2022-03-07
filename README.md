@@ -1,5 +1,6 @@
 # Cyberbase-frontend-test
-Front end test project
+
+
 Just a "test" project based on an interview task, the task being:
 
 ```Requirements
